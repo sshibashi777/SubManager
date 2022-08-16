@@ -26,7 +26,7 @@ struct ContentView: View {
                 
                 VStack {
                     SubscriptionList(subs: $subs, sub: $sub)
-                        .padding(.top, 20)
+                        .padding(.top, 100)
                     
                     Spacer()
                 }
@@ -55,7 +55,7 @@ struct ContentView: View {
                 }) {
                     Image(systemName: "plus.circle.fill")
                         .font(.largeTitle)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("textColor"))
                 }
             }
             .sheet(isPresented: $showingSubscriptionEdit) {
@@ -198,6 +198,8 @@ struct ContentView: View {
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             ContentView(subs: .constant(Subscription.sampleData), sub: .constant(Subscription.sampleData[0]), saveAction: {})
+            ContentView(subs: .constant(Subscription.sampleData), sub: .constant(Subscription.sampleData[0]), saveAction: {})
+                .preferredColorScheme(.dark)
         }
     }
 }

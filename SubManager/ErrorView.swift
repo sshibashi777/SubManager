@@ -55,5 +55,7 @@ struct ErrorView_Previews: PreviewProvider {
     
     static var previews: some View {
         ErrorView(errorWrapper: wrapper)
+        ErrorView(errorWrapper: wrapper)
+            .preferredColorScheme(.dark)
     }
 }

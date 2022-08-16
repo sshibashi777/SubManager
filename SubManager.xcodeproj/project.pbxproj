@@ -14,7 +14,6 @@
 		343D818528AA3322002325E8 /* SubscriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343D818428AA3322002325E8 /* SubscriptionModel.swift */; };
 		343D818728AA49FC002325E8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343D818628AA49FC002325E8 /* Extensions.swift */; };
 		34692E2128AA993900EA8A0A /* SubscriptionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34692E2028AA993900EA8A0A /* SubscriptionStore.swift */; };
-		3480EFD428ABA9FC0037BE62 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3480EFD328ABA9FC0037BE62 /* HelpView.swift */; };
 		34A7B54E28AA2A950053A347 /* SubManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A7B54D28AA2A950053A347 /* SubManagerApp.swift */; };
 		34A7B55028AA2A950053A347 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A7B54F28AA2A950053A347 /* ContentView.swift */; };
 		34A7B55228AA2A970053A347 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34A7B55128AA2A970053A347 /* Assets.xcassets */; };
@@ -32,7 +31,6 @@
 		343D818428AA3322002325E8 /* SubscriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionModel.swift; sourceTree = "<group>"; };
 		343D818628AA49FC002325E8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		34692E2028AA993900EA8A0A /* SubscriptionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionStore.swift; sourceTree = "<group>"; };
-		3480EFD328ABA9FC0037BE62 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		34A7B54A28AA2A950053A347 /* SubManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34A7B54D28AA2A950053A347 /* SubManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubManagerApp.swift; sourceTree = "<group>"; };
 		34A7B54F28AA2A950053A347 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,7 +84,6 @@
 				341024F428AB36B3005512C8 /* ErrorWrapper.swift */,
 				341024F628AB36E9005512C8 /* ErrorView.swift */,
 				341024F828AB3D9F005512C8 /* SubscriptionDetail.swift */,
-				3480EFD328ABA9FC0037BE62 /* HelpView.swift */,
 				34A7B55328AA2A970053A347 /* Preview Content */,
 			);
 			path = SubManager;
@@ -172,7 +169,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				343D818728AA49FC002325E8 /* Extensions.swift in Sources */,
-				3480EFD428ABA9FC0037BE62 /* HelpView.swift in Sources */,
 				343D818528AA3322002325E8 /* SubscriptionModel.swift in Sources */,
 				34EDB1AA28AA90A500FC1A47 /* SubscriptionList.swift in Sources */,
 				34A7B55028AA2A950053A347 /* ContentView.swift in Sources */,

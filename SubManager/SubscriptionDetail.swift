@@ -16,7 +16,7 @@ struct SubscriptionDetail: View {
     
     var body: some View {
         ZStack {
-            Image("detailBackground")
+            Image("background")
             
             VStack(spacing: 30) {
                 Text(sub.serviceName)
@@ -49,9 +49,11 @@ struct SubscriptionDetail: View {
                         .font(.title)
                         .foregroundColor(.red)
                 }
-                .buttonStyle(.bordered)
             }
-            .foregroundColor(.black)
+            .padding(40)
+            .foregroundColor(Color("textColor"))
+            .background(.ultraThinMaterial)
+            .cornerRadius(25)
         }
         .sheet(isPresented: $showingSubscriptionEdit) {
             NavigationView {
@@ -84,6 +86,10 @@ struct SubscriptionDetail: View {
         static var previews: some View {
             NavigationView {
                 SubscriptionDetail(sub: .constant(Subscription.sampleData[0]), saveAction: {})
+            }
+            NavigationView {
+                SubscriptionDetail(sub: .constant(Subscription.sampleData[0]), saveAction: {})
+                    .preferredColorScheme(.dark)
             }
         }
     }
