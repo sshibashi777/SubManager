@@ -181,6 +181,7 @@ struct ContentView: View {
                             }
                             .background(.blue)
                             .cornerRadius(25)
+                            .padding(.bottom, 30)
                         }
                     }
                 }
