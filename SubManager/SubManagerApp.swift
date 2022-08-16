@@ -27,7 +27,7 @@ struct SubManagerApp: App {
                 do {
                     store.subs = try await SubscribeStore.load()
                 } catch {
-                    errorWrapper = ErrorWrapper(error: error, guidance: "Scrumdinger will load sample data and continue.")
+                    errorWrapper = ErrorWrapper(error: error, guidance: "SubManager will load sample data and continue.")
                 }
             }
             .sheet(item: $errorWrapper, onDismiss: {
