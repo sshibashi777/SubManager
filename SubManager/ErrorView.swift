@@ -14,6 +14,10 @@ struct ErrorView: View {
     var body: some View {
         NavigationView {
             VStack {
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .font(.title2)
+                    .foregroundColor(.yellow)
+                
                 Text("An error has occurred!")
                     .font(.title)
                     .padding(.bottom)

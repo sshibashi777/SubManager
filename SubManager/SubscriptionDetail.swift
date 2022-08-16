@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SubscriptionDetail: View {
     @Binding var sub: Subscription
-    @Binding var subs: [Subscription]
     @Environment(\.scenePhase) private var scenePhase
     @State private var showingSubscriptionEdit = false
     @State private var newSubscriptionData = Subscription.Data()
@@ -37,8 +36,11 @@ struct SubscriptionDetail: View {
                 } label: {
                     Text("Edit")
                         .font(.title)
-                        .foregroundColor(.blue)
+                        .foregroundColor(.white)
                 }
+                .frame(width: 100, height: 50)
+                .background(.blue)
+                .cornerRadius(25)
                 
                 Button {
                     
@@ -47,6 +49,7 @@ struct SubscriptionDetail: View {
                         .font(.title)
                         .foregroundColor(.red)
                 }
+                .buttonStyle(.bordered)
             }
             .foregroundColor(.black)
         }
@@ -57,15 +60,14 @@ struct SubscriptionDetail: View {
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
-                            Button("Dismiss") {
+                            Button("Cancel") {
                                 showingSubscriptionEdit = false
                                 newSubscriptionData = Subscription.Data()
                             }
+                            .foregroundColor(.red)
                         }
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Add") {
-                                let newSub = Subscription(data: newSubscriptionData)
-                                subs.append(newSub)
                                 showingSubscriptionEdit = false
                                 newSubscriptionData = Subscription.Data()
                             }
@@ -81,7 +83,7 @@ struct SubscriptionDetail: View {
     struct DetailView_Previews: PreviewProvider {
         static var previews: some View {
             NavigationView {
-                SubscriptionDetail(sub: .constant(Subscription.sampleData[0]), subs: .constant(Subscription.sampleData), saveAction: {})
+                SubscriptionDetail(sub: .constant(Subscription.sampleData[0]), saveAction: {})
             }
         }
     }

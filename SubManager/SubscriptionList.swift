@@ -17,14 +17,14 @@ struct SubscriptionList: View {
     var body: some View {
         ScrollView(.vertical) {
             VStack {
-                ForEach($subs) { $subscription in
-                    NavigationLink(destination: SubscriptionDetail(sub: $sub, subs: $subs, saveAction: {})) {
-                        SubscriptionRow(sub: subscription)
+                ForEach($subs) { subscription in
+                    NavigationLink(destination: SubscriptionDetail(sub: subscription, saveAction: {})) {
+                        SubscriptionRow(sub: subscription.wrappedValue)
                     }
                 }
             }
         }
-        .frame(height: 400)
+        .frame(maxHeight: 800)
     }
 }
 

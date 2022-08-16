@@ -26,7 +26,7 @@ struct SubscriptionRow: View {
                     .font(.caption)
             }
         }
-        .foregroundColor(.white)
+        .foregroundColor(.black)
         .padding()
         .background(.ultraThinMaterial)
         .frame(maxWidth: 370, maxHeight: 70)
