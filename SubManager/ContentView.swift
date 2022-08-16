@@ -26,7 +26,7 @@ struct ContentView: View {
                 
                 VStack {
                     SubscriptionList(subs: $subs, sub: $sub)
-                        .padding(.top, 100)
+                        .padding(.top, 150)
                     
                     Spacer()
                 }
@@ -107,9 +107,8 @@ struct ContentView: View {
                                     Text("Tap the add button")
                                         .frame(width: 200, height: 40)
                                     
-                                    Image("plusButton")
-                                        .resizable()
-                                        .frame(width: 50, height: 50)
+                                    Image(systemName: "plus.circle.fill")
+                                        .font(.largeTitle)
                                 }
                                 .padding(.top, 10)
                                 
