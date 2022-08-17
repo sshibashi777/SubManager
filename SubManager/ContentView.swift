@@ -52,6 +52,7 @@ struct ContentView: View {
             .toolbar {
                 Button {
                     showingSubscriptionEdit = true
+                    newSubscriptionData = Subscription.sampleData[0]
                 } label: {
                     Image(systemName: "plus.circle.fill")
                         .font(.largeTitle)
@@ -61,7 +62,7 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showingSubscriptionEdit) {
             NavigationView {
-                SubscriptionEdit(sub: $brandNewSubscriptionData)
+                SubscriptionEdit(sub: $newSubscriptionData)
                     .navigationTitle(Text("Add a new subscription"))
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
