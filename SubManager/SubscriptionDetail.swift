@@ -51,7 +51,7 @@ struct SubscriptionDetail: View {
                         .foregroundColor(.red)
                 }
             }
-            .padding(20)
+            .padding(30)
             .foregroundColor(Color("textColor"))
             .background(.ultraThinMaterial)
             .cornerRadius(25)
@@ -70,7 +70,7 @@ struct SubscriptionDetail: View {
                             .foregroundColor(.red)
                         }
                         ToolbarItem(placement: .confirmationAction) {
-                            Button("Add") {
+                            Button("Done") {
                                 showingSubscriptionEdit = false
                                 newSubscriptionData = sub
                             }

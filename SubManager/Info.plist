@@ -8,7 +8,7 @@
 		<dict>
 			<key>Background Color</key>
 			<string>textColor</string>
-			<key>Image name</key>
+			<key>Image Name</key>
 			<string>SubManager</string>
 		</dict>
 	</dict>
