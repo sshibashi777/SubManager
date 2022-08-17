@@ -26,8 +26,11 @@ class SubscribeStore: ObservableObject {
                 switch result {
                 case .failure(let error):
                     continuation.resume(throwing: error)
+                    print("Could not load data ❌")
+                    
                 case .success(let subs):
                     continuation.resume(returning: subs)
+                    print("Loaded data successfully ✅")
                 }
             }
         }
@@ -40,16 +43,19 @@ class SubscribeStore: ObservableObject {
                 guard let file = try? FileHandle(forReadingFrom: fileURL) else {
                     DispatchQueue.main.async {
                         completion(.success([]))
+                        print("Loaded data successfully ✅")
                     }
                     return
                 }
                 let subscriptions = try JSONDecoder().decode([Subscription].self, from: file.availableData)
                 DispatchQueue.main.async {
                     completion(.success(subscriptions))
+                    print("Successfully decoded data ✅")
                 }
             } catch {
                 DispatchQueue.main.async {
                     completion(.failure(error))
+                    print("Could not decode data ❌")
                 }
             }
         }
@@ -62,8 +68,10 @@ class SubscribeStore: ObservableObject {
                 switch result {
                 case .failure(let error):
                     continuation.resume(throwing: error)
+                    print("Could not save data ❌")
                 case .success(let subsSaved):
                     continuation.resume(returning: subsSaved)
+                    print("Saved data successfully ✅")
                 }
             }
         }
@@ -77,10 +85,12 @@ class SubscribeStore: ObservableObject {
                 try data.write(to: outfile)
                 DispatchQueue.main.async {
                     completion(.success(subs.count))
+                    print("Saved data successfully ✅")
                 }
             } catch {
                 DispatchQueue.main.async {
                     completion(.failure(error))
+                    print("Could not save data ❌")
                 }
             }
         }

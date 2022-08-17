@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Subscription: Identifiable, Codable {
     let id: UUID
@@ -30,7 +31,7 @@ extension Subscription {
         var date: Date = Date()
         var renewDate: String = ""
         var serviceName: String = ""
-        var amount: String = "500"
+        var amount: String = ""
     }
     
     var data: Data {

@@ -62,7 +62,7 @@ struct ContentView: View {
         .sheet(isPresented: $showingSubscriptionEdit) {
             NavigationView {
                 SubscriptionEdit(data: $newSubscriptionData)
-                    .navigationTitle(Text("Add/edit subscription"))
+                    .navigationTitle(Text("Add a new subscription"))
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
