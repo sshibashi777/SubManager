@@ -69,7 +69,6 @@ struct ContentView: View {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Cancel") {
                                 showingSubscriptionEdit = false
-                                
                             }
                             .foregroundColor(.red)
                         }
@@ -78,6 +77,8 @@ struct ContentView: View {
                                 subs.append(newSubscriptionData)
                                 showingSubscriptionEdit = false
                             }
+                            .disabled(brandNewSubscriptionData.serviceName.isEmpty)
+                            .disabled(brandNewSubscriptionData.amount.isEmpty)
                         }
                     }
             }

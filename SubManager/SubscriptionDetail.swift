@@ -55,6 +55,7 @@ struct SubscriptionDetail: View {
             .foregroundColor(Color("textColor"))
             .background(.ultraThinMaterial)
             .cornerRadius(25)
+            .shadow(color: .black.opacity(0.3), radius: 5, x: 4, y: 4)
         }
         .sheet(isPresented: $showingSubscriptionEdit) {
             NavigationView {
@@ -65,7 +66,6 @@ struct SubscriptionDetail: View {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Cancel") {
                                 showingSubscriptionEdit = false
-                                newSubscriptionData = sub
                             }
                             .foregroundColor(.red)
                         }
@@ -74,6 +74,8 @@ struct SubscriptionDetail: View {
                                 showingSubscriptionEdit = false
                                 newSubscriptionData = sub
                             }
+                            .disabled(newSubscriptionData.serviceName.isEmpty)
+                            .disabled(newSubscriptionData.amount.isEmpty)
                         }
                     }
             }
