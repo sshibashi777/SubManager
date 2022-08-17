@@ -85,10 +85,10 @@ struct SubscriptionDetail: View {
     struct DetailView_Previews: PreviewProvider {
         static var previews: some View {
             NavigationView {
-                SubscriptionDetail(sub: .constant(Subscription.sampleData[0]), saveAction: {})
+                SubscriptionDetail(sub: .constant(Subscription.sampleData[0]),  saveAction: {})
             }
             NavigationView {
-                SubscriptionDetail(sub: .constant(Subscription.sampleData[0]), saveAction: {})
+                SubscriptionDetail(sub: .constant(Subscription.sampleData[0]),  saveAction: {})
                     .preferredColorScheme(.dark)
             }
         }
