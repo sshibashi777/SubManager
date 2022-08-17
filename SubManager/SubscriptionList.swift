@@ -24,7 +24,7 @@ struct SubscriptionList: View {
                 }
             }
         }
-        .frame(maxHeight: 800)
+        .frame(maxHeight: 600)
     }
 }
 
