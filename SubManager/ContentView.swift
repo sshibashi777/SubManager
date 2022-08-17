@@ -35,6 +35,9 @@ struct ContentView: View {
                     VStack {
                         Text("No subscriptions yet")
                             .font(.title3)
+                            .padding()
+                            .background(.ultraThinMaterial)
+                            .cornerRadius(10)
                         Button {
                             showingHelp = true
                         } label: {

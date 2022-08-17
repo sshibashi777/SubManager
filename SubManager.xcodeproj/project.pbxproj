@@ -113,6 +113,8 @@
 			dependencies = (
 			);
 			name = SubManager;
+			packageProductDependencies = (
+			);
 			productName = SubManager;
 			productReference = 34A7B54A28AA2A950053A347 /* SubManager.app */;
 			productType = "com.apple.product-type.application";
@@ -141,6 +143,8 @@
 				Base,
 			);
 			mainGroup = 34A7B54128AA2A950053A347;
+			packageReferences = (
+			);
 			productRefGroup = 34A7B54B28AA2A950053A347 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
