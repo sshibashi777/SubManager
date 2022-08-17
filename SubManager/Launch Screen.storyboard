@@ -16,16 +16,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manage your subscriptions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKc-QO-lCU">
-                                <rect key="frame" x="57" y="401.5" width="300" height="93"/>
+                                <rect key="frame" x="107" y="413.5" width="200" height="69.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="NuA-WC-W89"/>
+                                    <constraint firstAttribute="width" constant="200" id="NuA-WC-W89"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="40"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SubManagerDark" translatesAutoresizingMaskIntoConstraints="NO" id="ttD-Zk-kRR">
-                                <rect key="frame" x="167" y="554.5" width="80" height="80"/>
+                                <rect key="frame" x="167" y="543" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="NTP-2Q-o86"/>
                                     <constraint firstAttribute="width" constant="80" id="RQ9-zg-Mpp"/>

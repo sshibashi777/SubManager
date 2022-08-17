@@ -18,9 +18,10 @@ struct SubscriptionDetail: View {
         ZStack {
             Image("background")
             
-            VStack(spacing: 30) {
+            VStack(alignment: .center, spacing: 30) {
                 Text(sub.serviceName)
-                    .font(.custom("largeTitle", size: 64))
+                    .font(.custom("largeTitle", size: 48))
+                    .bold()
                 
                 VStack {
                     Text("Subscription renews on:")
@@ -50,7 +51,7 @@ struct SubscriptionDetail: View {
                         .foregroundColor(.red)
                 }
             }
-            .padding(40)
+            .padding(20)
             .foregroundColor(Color("textColor"))
             .background(.ultraThinMaterial)
             .cornerRadius(25)

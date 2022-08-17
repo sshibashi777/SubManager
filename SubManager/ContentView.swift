@@ -8,10 +8,10 @@
 import SwiftUI
 struct ContentView: View {
     @Binding var subs: [Subscription]
-    @Binding var sub: Subscription
     @Environment(\.scenePhase) private var scenePhase
     @State private var showingSubscriptionEdit = false
     @Binding var newSubscriptionData: Subscription
+    @Binding var brandNewSubscriptionData: Subscription
     @State private var showingHelp = false
     let saveAction: ()->Void
     
@@ -25,7 +25,7 @@ struct ContentView: View {
                     .ignoresSafeArea()
                 
                 VStack {
-                    SubscriptionList(subs: $subs, sub: $sub)
+                    SubscriptionList(subs: $subs)
                         .padding(.top, 100)
                 }
                 if subs.isEmpty {
@@ -61,14 +61,14 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showingSubscriptionEdit) {
             NavigationView {
-                SubscriptionEdit(sub: $sub)
+                SubscriptionEdit(sub: $brandNewSubscriptionData)
                     .navigationTitle(Text("Add a new subscription"))
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Cancel") {
                                 showingSubscriptionEdit = false
-                                newSubscriptionData = sub
+                                
                             }
                             .foregroundColor(.red)
                         }
@@ -76,7 +76,6 @@ struct ContentView: View {
                             Button("Add") {
                                 subs.append(newSubscriptionData)
                                 showingSubscriptionEdit = false
-                                newSubscriptionData = sub
                             }
                         }
                     }
@@ -197,8 +196,8 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(subs: .constant(Subscription.sampleData), sub: .constant(Subscription.sampleData[0]), newSubscriptionData: .constant(Subscription.sampleData[0]), saveAction: {})
-        ContentView(subs: .constant(Subscription.sampleData), sub: .constant(Subscription.sampleData[0]), newSubscriptionData: .constant(Subscription.sampleData[0]), saveAction: {})
+        ContentView(subs: .constant(Subscription.sampleData),  newSubscriptionData: .constant(Subscription.sampleData[0]), brandNewSubscriptionData: .constant(Subscription.sampleData[0]), saveAction: {})
+        ContentView(subs: .constant(Subscription.sampleData),  newSubscriptionData: .constant(Subscription.sampleData[0]), brandNewSubscriptionData: .constant(Subscription.sampleData[0]), saveAction: {})
             .preferredColorScheme(.dark)
     }
 }

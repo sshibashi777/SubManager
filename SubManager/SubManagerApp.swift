@@ -14,7 +14,7 @@ struct SubManagerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(subs: $store.subs, sub: $store.sub, newSubscriptionData: $store.sub) {
+            ContentView(subs: $store.subs, newSubscriptionData: $store.sub, brandNewSubscriptionData: $store.sub) {
                 Task {
                     do {
                         try await SubscribeStore.save(subs: store.subs)
