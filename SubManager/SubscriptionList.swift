@@ -18,7 +18,7 @@ struct SubscriptionList: View {
         ScrollView(.vertical) {
             VStack {
                 ForEach($subs) { subscription in
-                    NavigationLink(destination: SubscriptionDetail(sub: subscription, saveAction: {})) {
+                    NavigationLink(destination: SubscriptionDetail(sub: subscription, newSubscriptionData: $sub, saveAction: {})) {
                         SubscriptionRow(sub: subscription.wrappedValue)
                     }
                 }

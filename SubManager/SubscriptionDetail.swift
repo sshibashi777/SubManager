@@ -11,7 +11,7 @@ struct SubscriptionDetail: View {
     @Binding var sub: Subscription
     @Environment(\.scenePhase) private var scenePhase
     @State private var showingSubscriptionEdit = false
-    @State private var newSubscriptionData = Subscription.Data()
+    @Binding var  newSubscriptionData: Subscription
     let saveAction: ()->Void
     
     var body: some View {
@@ -57,21 +57,21 @@ struct SubscriptionDetail: View {
         }
         .sheet(isPresented: $showingSubscriptionEdit) {
             NavigationView {
-                SubscriptionEdit(data: $newSubscriptionData)
+                SubscriptionEdit(sub: $newSubscriptionData)
                     .navigationTitle(Text("Edit subscription"))
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Cancel") {
                                 showingSubscriptionEdit = false
-                                newSubscriptionData = Subscription.Data()
+                                newSubscriptionData = sub
                             }
                             .foregroundColor(.red)
                         }
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Add") {
                                 showingSubscriptionEdit = false
-                                newSubscriptionData = Subscription.Data()
+                                newSubscriptionData = sub
                             }
                         }
                     }
@@ -85,10 +85,10 @@ struct SubscriptionDetail: View {
     struct DetailView_Previews: PreviewProvider {
         static var previews: some View {
             NavigationView {
-                SubscriptionDetail(sub: .constant(Subscription.sampleData[0]),  saveAction: {})
+                SubscriptionDetail(sub: .constant(Subscription.sampleData[0]), newSubscriptionData: .constant(Subscription.sampleData[0]),  saveAction: {})
             }
             NavigationView {
-                SubscriptionDetail(sub: .constant(Subscription.sampleData[0]),  saveAction: {})
+                SubscriptionDetail(sub: .constant(Subscription.sampleData[0]), newSubscriptionData: .constant(Subscription.sampleData[0]),  saveAction: {})
                     .preferredColorScheme(.dark)
             }
         }

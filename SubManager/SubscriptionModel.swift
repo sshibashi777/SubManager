@@ -10,9 +10,12 @@ import SwiftUI
 
 struct Subscription: Identifiable, Codable {
     let id: UUID
+    var date: Date = Date()
     var renewDate: String
     var serviceName: String
     var amount: String
+    
+//    var data: Data
     
     var datePursed: Date {
         renewDate.datePursed()
@@ -32,10 +35,6 @@ extension Subscription {
         var renewDate: String = ""
         var serviceName: String = ""
         var amount: String = ""
-    }
-    
-    var data: Data {
-        Data(renewDate: renewDate, serviceName: serviceName, amount: amount)
     }
     
     mutating func update(from data: Data) {

@@ -11,7 +11,7 @@ struct ContentView: View {
     @Binding var sub: Subscription
     @Environment(\.scenePhase) private var scenePhase
     @State private var showingSubscriptionEdit = false
-    @State private var newSubscriptionData = Subscription.Data()
+    @Binding var newSubscriptionData: Subscription
     @State private var showingHelp = false
     let saveAction: ()->Void
     
@@ -61,23 +61,22 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showingSubscriptionEdit) {
             NavigationView {
-                SubscriptionEdit(data: $newSubscriptionData)
+                SubscriptionEdit(sub: $sub)
                     .navigationTitle(Text("Add a new subscription"))
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Cancel") {
                                 showingSubscriptionEdit = false
-                                newSubscriptionData = Subscription.Data()
+                                newSubscriptionData = sub
                             }
                             .foregroundColor(.red)
                         }
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Add") {
-                                let newSub = Subscription(data: newSubscriptionData)
-                                subs.append(newSub)
+                                subs.append(newSubscriptionData)
                                 showingSubscriptionEdit = false
-                                newSubscriptionData = Subscription.Data()
+                                newSubscriptionData = sub
                             }
                         }
                     }
@@ -198,8 +197,8 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(subs: .constant(Subscription.sampleData), sub: .constant(Subscription.sampleData[0]), saveAction: {})
-        ContentView(subs: .constant(Subscription.sampleData), sub: .constant(Subscription.sampleData[0]), saveAction: {})
+        ContentView(subs: .constant(Subscription.sampleData), sub: .constant(Subscription.sampleData[0]), newSubscriptionData: .constant(Subscription.sampleData[0]), saveAction: {})
+        ContentView(subs: .constant(Subscription.sampleData), sub: .constant(Subscription.sampleData[0]), newSubscriptionData: .constant(Subscription.sampleData[0]), saveAction: {})
             .preferredColorScheme(.dark)
     }
 }
