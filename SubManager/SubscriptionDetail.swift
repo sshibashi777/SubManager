@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SubscriptionDetail: View {
     @Binding var sub: Subscription
+    @Binding var subs: [Subscription]
     @Environment(\.scenePhase) private var scenePhase
     @State private var showingSubscriptionEdit = false
     @Binding var  newSubscriptionData: Subscription
@@ -35,19 +36,19 @@ struct SubscriptionDetail: View {
                 Button {
                     showingSubscriptionEdit = true
                 } label: {
-                    Text("Edit")
-                        .font(.title)
+                    Text("\(Image(systemName: "pencil"))Edit")
+                        .font(.title2)
                         .foregroundColor(.white)
                 }
-                .frame(width: 100, height: 50)
+                .padding()
                 .background(.blue)
-                .cornerRadius(25)
+                .cornerRadius(30)
                 
                 Button {
                     
                 } label: {
-                    Text("Delete")
-                        .font(.title)
+                    Text("\(Image(systemName: "trash"))Delete")
+                        .font(.title2)
                         .foregroundColor(.red)
                 }
             }
@@ -86,10 +87,10 @@ struct SubscriptionDetail: View {
     struct DetailView_Previews: PreviewProvider {
         static var previews: some View {
             NavigationView {
-                SubscriptionDetail(sub: .constant(Subscription.sampleData[0]), newSubscriptionData: .constant(Subscription.sampleData[0]),  saveAction: {})
+                SubscriptionDetail(sub: .constant(Subscription.sampleData[1]), subs: .constant(Subscription.sampleData), newSubscriptionData: .constant(Subscription.sampleData[1]),  saveAction: {})
             }
             NavigationView {
-                SubscriptionDetail(sub: .constant(Subscription.sampleData[0]), newSubscriptionData: .constant(Subscription.sampleData[0]),  saveAction: {})
+                SubscriptionDetail(sub: .constant(Subscription.sampleData[1]), subs: .constant(Subscription.sampleData), newSubscriptionData: .constant(Subscription.sampleData[1]),  saveAction: {})
                     .preferredColorScheme(.dark)
             }
         }

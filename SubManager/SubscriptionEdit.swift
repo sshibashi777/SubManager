@@ -37,6 +37,6 @@ struct SubscriptionEdit: View {
 
 struct SubscriptionEdit_Previews: PreviewProvider {
     static var previews: some View {
-        SubscriptionEdit(sub: .constant(Subscription.sampleData[0]))
+        SubscriptionEdit(sub: .constant(Subscription.sampleData[1]))
     }
 }
