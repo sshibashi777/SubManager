@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SubscriptionDetail: View {
     @Binding var sub: Subscription
-    @Binding var subs: [Subscription]
     @Environment(\.scenePhase) private var scenePhase
     @State private var showingSubscriptionEdit = false
     @Binding var  newSubscriptionData: Subscription
@@ -87,10 +86,10 @@ struct SubscriptionDetail: View {
     struct DetailView_Previews: PreviewProvider {
         static var previews: some View {
             NavigationView {
-                SubscriptionDetail(sub: .constant(Subscription.sampleData[1]), subs: .constant(Subscription.sampleData), newSubscriptionData: .constant(Subscription.sampleData[1]),  saveAction: {})
+                SubscriptionDetail(sub: .constant(Subscription.sampleData[1]),  newSubscriptionData: .constant(Subscription.sampleData[1]),  saveAction: {})
             }
             NavigationView {
-                SubscriptionDetail(sub: .constant(Subscription.sampleData[1]), subs: .constant(Subscription.sampleData), newSubscriptionData: .constant(Subscription.sampleData[1]),  saveAction: {})
+                SubscriptionDetail(sub: .constant(Subscription.sampleData[1]),  newSubscriptionData: .constant(Subscription.sampleData[1]),  saveAction: {})
                     .preferredColorScheme(.dark)
             }
         }
