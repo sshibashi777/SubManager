@@ -26,12 +26,8 @@ struct ContentView: View {
                 
                 VStack {
                     SubscriptionList(subs: $subs, sub: $sub)
-                        .padding(.top, 150)
-                    
-                    Spacer()
+                        .padding(.top, 100)
                 }
-                
-                
                 if subs.isEmpty {
                     VStack {
                         Text("No subscriptions yet")
