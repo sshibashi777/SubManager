@@ -26,7 +26,6 @@ struct ContentView: View {
                 
                 VStack {
                     SubscriptionList(subs: $subs)
-                        .padding(.top, 100)
                 }
                 if subs.isEmpty {
                     VStack {
@@ -198,7 +197,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(subs: .constant(Subscription.sampleData),  newSubscriptionData: .constant(Subscription.sampleData[1]), brandNewSubscriptionData: .constant(Subscription.sampleData[1]), saveAction: {})
+        Group {
+            ContentView(subs: .constant(Subscription.sampleData),  newSubscriptionData: .constant(Subscription.sampleData[1]), brandNewSubscriptionData: .constant(Subscription.sampleData[1]), saveAction: {})
+        }
         ContentView(subs: .constant(Subscription.sampleData),  newSubscriptionData: .constant(Subscription.sampleData[1]), brandNewSubscriptionData: .constant(Subscription.sampleData[1]), saveAction: {})
             .preferredColorScheme(.dark)
     }
