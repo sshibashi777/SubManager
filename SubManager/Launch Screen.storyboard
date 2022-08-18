@@ -24,7 +24,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SubManagerDark" translatesAutoresizingMaskIntoConstraints="NO" id="ttD-Zk-kRR" userLabel="SubManager">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SubManager" translatesAutoresizingMaskIntoConstraints="NO" id="ttD-Zk-kRR" userLabel="SubManager">
                                 <rect key="frame" x="167" y="543" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="NTP-2Q-o86"/>
@@ -48,6 +48,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SubManagerDark" width="1024" height="1024"/>
+        <image name="SubManager" width="1024" height="1024"/>
     </resources>
 </document>
