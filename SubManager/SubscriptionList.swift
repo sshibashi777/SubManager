@@ -16,9 +16,9 @@ struct SubscriptionList: View {
     var body: some View {
         ScrollView(.vertical) {
             VStack {
-                ForEach($subs) {_ in 
-                    NavigationLink(destination: SubscriptionDetail(sub: $sub, newSubscriptionData: $sub, saveAction: {})) {
-                        SubscriptionRow(sub: $sub)
+                ForEach(subs.indices, id: \.self) {index in
+                    NavigationLink(destination: SubscriptionDetail(sub: $subs[index], newSubscriptionData: $subs[index], saveAction: {})) {
+                        SubscriptionRow(sub: $subs[index])
                     }
                 }
             }
