@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class SubscribeStore: ObservableObject {
+class SubscriptionStore: ObservableObject {
     @Published var subs: [Subscription] = []
     @Published var sub: Subscription = Subscription.sampleData[0]
     

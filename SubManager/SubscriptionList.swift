@@ -9,16 +9,16 @@ import SwiftUI
 struct SubscriptionList: View {
 
     @Binding var subs: [Subscription]
-    @State private var newSubscriptionData = Subscription.Data()
+    @Binding var sub: Subscription
     @State private var showingDetail = false
 
 
     var body: some View {
         ScrollView(.vertical) {
             VStack {
-                ForEach($subs) { subscription in
-                    NavigationLink(destination: SubscriptionDetail(sub: subscription, newSubscriptionData: subscription, saveAction: {})) {
-                        SubscriptionRow(sub: subscription.wrappedValue)
+                ForEach($subs) {_ in 
+                    NavigationLink(destination: SubscriptionDetail(sub: $sub, newSubscriptionData: $sub, saveAction: {})) {
+                        SubscriptionRow(sub: $sub)
                     }
                 }
             }
@@ -29,7 +29,7 @@ struct SubscriptionList: View {
 
 struct SubscriptionList_Previews: PreviewProvider {
     static var previews: some View {
-        SubscriptionList(subs: .constant(Subscription.sampleData))
+        SubscriptionList(subs: .constant(Subscription.sampleData), sub: .constant(Subscription.sampleData[1]))
     }
 }
 

@@ -8,10 +8,11 @@
 import SwiftUI
 struct ContentView: View {
     @Binding var subs: [Subscription]
+    @Binding var sub: Subscription
     @Environment(\.scenePhase) private var scenePhase
     @State private var showingSubscriptionEdit = false
-    @Binding var newSubscriptionData: Subscription
     @Binding var brandNewSubscriptionData: Subscription
+    @Binding var newSubscriptionData: Subscription
     @State private var showingHelp = false
     let saveAction: ()->Void
     
@@ -25,7 +26,7 @@ struct ContentView: View {
                     .ignoresSafeArea()
                 
                 VStack {
-                    SubscriptionList(subs: $subs)
+                    SubscriptionList(subs: $subs, sub: $sub)
                 }
                 if subs.isEmpty {
                     VStack {
@@ -73,11 +74,13 @@ struct ContentView: View {
                         }
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Add") {
+                                newSubscriptionData = sub
+                                print(newSubscriptionData.amount)
                                 subs.append(newSubscriptionData)
                                 showingSubscriptionEdit = false
                             }
-                            .disabled(brandNewSubscriptionData.serviceName.isEmpty)
-                            .disabled(brandNewSubscriptionData.amount.isEmpty)
+                            .disabled(newSubscriptionData.serviceName.isEmpty)
+                            .disabled(newSubscriptionData.amount.isEmpty)
                         }
                     }
             }
@@ -198,9 +201,9 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView(subs: .constant(Subscription.sampleData),  newSubscriptionData: .constant(Subscription.sampleData[1]), brandNewSubscriptionData: .constant(Subscription.sampleData[1]), saveAction: {})
+            ContentView(subs: .constant(Subscription.sampleData), sub: .constant(Subscription.sampleData[1]),  brandNewSubscriptionData: .constant(Subscription.sampleData[1]), newSubscriptionData: .constant(Subscription.sampleData[1]), saveAction: {})
         }
-        ContentView(subs: .constant(Subscription.sampleData),  newSubscriptionData: .constant(Subscription.sampleData[1]), brandNewSubscriptionData: .constant(Subscription.sampleData[1]), saveAction: {})
+        ContentView(subs: .constant(Subscription.sampleData), sub: .constant(Subscription.sampleData[1]),  brandNewSubscriptionData: .constant(Subscription.sampleData[1]), newSubscriptionData: .constant(Subscription.sampleData[1]), saveAction: {})
             .preferredColorScheme(.dark)
     }
 }

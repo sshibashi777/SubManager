@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SubscriptionRow: View {
-    let sub: Subscription
+    @Binding var sub: Subscription
     
     var body: some View {
         HStack {
@@ -35,9 +35,8 @@ struct SubscriptionRow: View {
 }
 
 struct ServiceColumn_Previews: PreviewProvider {
-    static var sub = Subscription.sampleData[0]
     static var previews: some View {
-        SubscriptionRow(sub: sub)
+        SubscriptionRow(sub: .constant(Subscription.sampleData[0]))
             .background(.ultraThinMaterial)
             .previewLayout(.fixed(width: 370, height: 70))
     }

@@ -9,15 +9,15 @@ import SwiftUI
 
 @main
 struct SubManagerApp: App {
-    @StateObject private var store = SubscribeStore()
+    @StateObject private var store = SubscriptionStore()
     @State private var errorWrapper: ErrorWrapper?
     
     var body: some Scene {
         WindowGroup {
-            ContentView(subs: $store.subs, newSubscriptionData: $store.sub, brandNewSubscriptionData: $store.sub) {
+            ContentView(subs: $store.subs, sub: $store.sub, brandNewSubscriptionData: $store.sub, newSubscriptionData: $store.sub) {
                 Task {
                     do {
-                        try await SubscribeStore.save(subs: store.subs)
+                        try await SubscriptionStore.save(subs: store.subs)
                     } catch {
                         errorWrapper = ErrorWrapper(error: error, guidance: "Try again later.")
                     }
@@ -25,7 +25,7 @@ struct SubManagerApp: App {
             }
             .task {
                 do {
-                    store.subs = try await SubscribeStore.load()
+                    store.subs = try await SubscriptionStore.load()
                 } catch {
                     errorWrapper = ErrorWrapper(error: error, guidance: "SubManager will load sample data and continue.")
                 }
