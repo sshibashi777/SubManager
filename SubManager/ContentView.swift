@@ -14,6 +14,7 @@ struct ContentView: View {
     @Binding var brandNewSubscriptionData: Subscription
     @Binding var newSubscriptionData: Subscription
     @State private var showingHelp = false
+    @State private var addButtonIsPressed = false
     let saveAction: ()->Void
     
     var body: some View {
@@ -57,6 +58,16 @@ struct ContentView: View {
                     Image(systemName: "plus.circle.fill")
                         .font(.largeTitle)
                         .foregroundColor(Color("textColor"))
+                }
+                .scaleEffect(addButtonIsPressed ? 0.8 : 1.0)
+                .pressEvents {
+                    withAnimation(.easeIn(duration: 0.05)) {
+                        addButtonIsPressed = true
+                    }
+                } onRelease: {
+                    withAnimation {
+                        addButtonIsPressed = false
+                    }
                 }
             }
         }

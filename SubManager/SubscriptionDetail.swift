@@ -13,6 +13,8 @@ struct SubscriptionDetail: View {
     @Environment(\.scenePhase) private var scenePhase
     @State private var showingSubscriptionEdit = false
     @Binding var  newSubscriptionData: Subscription
+    @State private var editIsPressed = false
+    @State private var deleteIsPressed = false
     let saveAction: ()->Void
     
     var body: some View {
@@ -33,16 +35,26 @@ struct SubscriptionDetail: View {
                 Text("¥ \(sub.amount)")
                     .font(.largeTitle)
                 
-                Button {
-                    showingSubscriptionEdit = true
-                } label: {
-                    Text("\(Image(systemName: "pencil"))Edit")
-                        .font(.title2)
-                        .foregroundColor(.white)
-                }
-                .padding()
-                .background(.blue)
-                .cornerRadius(30)
+                Capsule()
+                    .frame(width: 90, height: 60, alignment: .center)
+                    .foregroundColor(.blue)
+                    .overlay(Text("\(Image(systemName: "pencil"))Edit"))
+                    .font(.title2)
+                    .foregroundColor(.white)
+                    .onTapGesture {
+                        showingSubscriptionEdit = true
+                    }
+                    .scaleEffect(editIsPressed ? 0.8 : 1.0)
+                    .pressEvents {
+                        withAnimation(.easeIn(duration: 0.05)) {
+                            editIsPressed = true
+                        }
+                    } onRelease: {
+                        withAnimation {
+                            editIsPressed = false
+                        }
+                    }
+                
                 
                 Button {
                     subs.remove(at: subs.count - 1)
@@ -50,6 +62,16 @@ struct SubscriptionDetail: View {
                     Text("\(Image(systemName: "trash"))Delete")
                         .font(.title2)
                         .foregroundColor(.red)
+                }
+                .scaleEffect(deleteIsPressed ? 0.8 : 1.0)
+                .pressEvents {
+                    withAnimation(.easeIn(duration: 0.05)) {
+                        deleteIsPressed = true
+                    }
+                } onRelease: {
+                    withAnimation {
+                        deleteIsPressed = false
+                    }
                 }
             }
             .padding(30)

@@ -20,6 +20,7 @@
 		34A7B55528AA2A970053A347 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34A7B55428AA2A970053A347 /* Preview Assets.xcassets */; };
 		34A7B55C28AA2C070053A347 /* SubscriptionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A7B55B28AA2C070053A347 /* SubscriptionRow.swift */; };
 		34AFDD6528AA7E8900F5120C /* SubscriptionEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AFDD6428AA7E8900F5120C /* SubscriptionEdit.swift */; };
+		34D5B5DD28AFDF4D001F8529 /* ButtonPressActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D5B5DC28AFDF4D001F8529 /* ButtonPressActions.swift */; };
 		34EDB1AA28AA90A500FC1A47 /* SubscriptionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EDB1A928AA90A500FC1A47 /* SubscriptionList.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		34A7B55428AA2A970053A347 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		34A7B55B28AA2C070053A347 /* SubscriptionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionRow.swift; sourceTree = "<group>"; };
 		34AFDD6428AA7E8900F5120C /* SubscriptionEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionEdit.swift; sourceTree = "<group>"; };
+		34D5B5DC28AFDF4D001F8529 /* ButtonPressActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPressActions.swift; sourceTree = "<group>"; };
 		34EDB1A928AA90A500FC1A47 /* SubscriptionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 				341024F628AB36E9005512C8 /* ErrorView.swift */,
 				341024F828AB3D9F005512C8 /* SubscriptionDetail.swift */,
 				34A7B55328AA2A970053A347 /* Preview Content */,
+				34D5B5DC28AFDF4D001F8529 /* ButtonPressActions.swift */,
 			);
 			path = SubManager;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				341024F928AB3D9F005512C8 /* SubscriptionDetail.swift in Sources */,
 				34A7B54E28AA2A950053A347 /* SubManagerApp.swift in Sources */,
 				341024F528AB36B3005512C8 /* ErrorWrapper.swift in Sources */,
+				34D5B5DD28AFDF4D001F8529 /* ButtonPressActions.swift in Sources */,
 				34A7B55C28AA2C070053A347 /* SubscriptionRow.swift in Sources */,
 				341024F728AB36E9005512C8 /* ErrorView.swift in Sources */,
 			);
