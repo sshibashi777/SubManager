@@ -15,6 +15,8 @@ struct ContentView: View {
     @Binding var newSubscriptionData: Subscription
     @State private var showingHelp = false
     @State private var addButtonIsPressed = false
+    @State private var helpButtonIsPressed = false
+    @State private var understoodPressed = false
     let saveAction: ()->Void
     
     var body: some View {
@@ -42,6 +44,16 @@ struct ContentView: View {
                             Image(systemName: "questionmark.circle.fill")
                                 .font(.largeTitle)
                                 .padding()
+                        }
+                        .scaleEffect(helpButtonIsPressed ? 0.8 : 1.0)
+                        .pressEvents {
+                            withAnimation(.easeIn(duration: 0.05)) {
+                                helpButtonIsPressed = true
+                            }
+                        } onRelease: {
+                            withAnimation {
+                                helpButtonIsPressed = false
+                            }
                         }
                     }
                 } else {
@@ -196,6 +208,16 @@ struct ContentView: View {
                         .background(.blue)
                         .cornerRadius(25)
                         .padding(.bottom, 30)
+                        .scaleEffect(understoodPressed ? 0.8 : 1.0)
+                        .pressEvents {
+                            withAnimation(.easeIn(duration: 0.05)) {
+                                understoodPressed = true
+                            }
+                        } onRelease: {
+                            withAnimation {
+                                understoodPressed = false
+                            }
+                        }
                     }
                 }
             }
