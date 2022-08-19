@@ -3,6 +3,3 @@ This app helps you manage all your Subscriptions. At least once in a lifetime, y
 
 This app was created by: Shun Ishibashi
 All rights reserved© 2022
-
-Redistribution, altering of this software without the creator's permission is strictly prohibted.
-
