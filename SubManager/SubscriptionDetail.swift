@@ -78,7 +78,8 @@ struct SubscriptionDetail: View {
             .foregroundColor(Color("textColor"))
             .background(.ultraThinMaterial)
             .cornerRadius(25)
-            .shadow(color: .black.opacity(0.3), radius: 5, x: 4, y: 4)
+            .shadow(color: Color("textColor").opacity(0.3), radius: 5, x: 4, y: 4)
+            .shadow(color: Color("textColor").opacity(0.3), radius: 5, x: -4, y: -4)
         }
         .sheet(isPresented: $showingSubscriptionEdit) {
             NavigationView {
