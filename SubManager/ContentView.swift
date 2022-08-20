@@ -30,7 +30,7 @@ struct ContentView: View {
                 
                 VStack {
                     SubscriptionList(subs: $subs, sub: $sub)
-                        .padding(.top, 100)
+                        .padding(.top, 90)
                 }
                 if subs.isEmpty {
                     VStack {
