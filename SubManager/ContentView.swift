@@ -14,7 +14,7 @@ struct ContentView: View {
     @Binding var brandNewSubscriptionData: Subscription
     @Binding var newSubscriptionData: Subscription
     @State private var showingHelp = false
-    @State private var addButtonIsPressed = false
+    @State private var plusButtonIsPressed = false
     @State private var helpButtonIsPressed = false
     @State private var understoodPressed = false
     let saveAction: ()->Void
@@ -30,6 +30,7 @@ struct ContentView: View {
                 
                 VStack {
                     SubscriptionList(subs: $subs, sub: $sub)
+                        .padding(.top, 100)
                 }
                 if subs.isEmpty {
                     VStack {
@@ -61,7 +62,6 @@ struct ContentView: View {
                 }
             }
             .navigationTitle(Text("Subscriptions"))
-            .navigationViewStyle(.stack)
             .toolbar {
                 Button {
                     showingSubscriptionEdit = true
@@ -71,14 +71,14 @@ struct ContentView: View {
                         .font(.largeTitle)
                         .foregroundColor(Color("textColor"))
                 }
-                .scaleEffect(addButtonIsPressed ? 0.8 : 1.0)
+                .scaleEffect(plusButtonIsPressed ? 0.8 : 1.0)
                 .pressEvents {
                     withAnimation(.easeIn(duration: 0.05)) {
-                        addButtonIsPressed = true
+                        plusButtonIsPressed = true
                     }
                 } onRelease: {
                     withAnimation {
-                        addButtonIsPressed = false
+                        plusButtonIsPressed = false
                     }
                 }
             }
