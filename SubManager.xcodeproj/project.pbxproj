@@ -88,8 +88,8 @@
 				341024F428AB36B3005512C8 /* ErrorWrapper.swift */,
 				341024F628AB36E9005512C8 /* ErrorView.swift */,
 				341024F828AB3D9F005512C8 /* SubscriptionDetail.swift */,
-				34A7B55328AA2A970053A347 /* Preview Content */,
 				34D5B5DC28AFDF4D001F8529 /* ButtonPressActions.swift */,
+				34A7B55328AA2A970053A347 /* Preview Content */,
 			);
 			path = SubManager;
 			sourceTree = "<group>";
