@@ -233,9 +233,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            ContentView(subs: .constant(Subscription.sampleData), sub: .constant(Subscription.sampleData[1]),  brandNewSubscriptionData: .constant(Subscription.sampleData[1]), newSubscriptionData: .constant(Subscription.sampleData[1]), saveAction: {})
-        }
+        ContentView(subs: .constant(Subscription.sampleData), sub: .constant(Subscription.sampleData[1]),  brandNewSubscriptionData: .constant(Subscription.sampleData[1]), newSubscriptionData: .constant(Subscription.sampleData[1]), saveAction: {})
         ContentView(subs: .constant(Subscription.sampleData), sub: .constant(Subscription.sampleData[1]),  brandNewSubscriptionData: .constant(Subscription.sampleData[1]), newSubscriptionData: .constant(Subscription.sampleData[1]), saveAction: {})
             .preferredColorScheme(.dark)
     }

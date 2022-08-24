@@ -22,6 +22,7 @@
 		34AFDD6528AA7E8900F5120C /* SubscriptionEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AFDD6428AA7E8900F5120C /* SubscriptionEdit.swift */; };
 		34D5B5DD28AFDF4D001F8529 /* ButtonPressActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D5B5DC28AFDF4D001F8529 /* ButtonPressActions.swift */; };
 		34EDB1AA28AA90A500FC1A47 /* SubscriptionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EDB1A928AA90A500FC1A47 /* SubscriptionList.swift */; };
+		34F38BBD28B6151600EF4E80 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F38BBC28B6151600EF4E80 /* LocalNotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		34AFDD6428AA7E8900F5120C /* SubscriptionEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionEdit.swift; sourceTree = "<group>"; };
 		34D5B5DC28AFDF4D001F8529 /* ButtonPressActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPressActions.swift; sourceTree = "<group>"; };
 		34EDB1A928AA90A500FC1A47 /* SubscriptionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionList.swift; sourceTree = "<group>"; };
+		34F38BBC28B6151600EF4E80 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				341024F628AB36E9005512C8 /* ErrorView.swift */,
 				341024F828AB3D9F005512C8 /* SubscriptionDetail.swift */,
 				34D5B5DC28AFDF4D001F8529 /* ButtonPressActions.swift */,
+				34F38BBC28B6151600EF4E80 /* LocalNotificationManager.swift */,
 				34A7B55328AA2A970053A347 /* Preview Content */,
 			);
 			path = SubManager;
@@ -180,6 +183,7 @@
 				343D818728AA49FC002325E8 /* Extensions.swift in Sources */,
 				343D818528AA3322002325E8 /* SubscriptionModel.swift in Sources */,
 				34EDB1AA28AA90A500FC1A47 /* SubscriptionList.swift in Sources */,
+				34F38BBD28B6151600EF4E80 /* LocalNotificationManager.swift in Sources */,
 				34A7B55028AA2A950053A347 /* ContentView.swift in Sources */,
 				34692E2128AA993900EA8A0A /* SubscriptionStore.swift in Sources */,
 				34AFDD6528AA7E8900F5120C /* SubscriptionEdit.swift in Sources */,
