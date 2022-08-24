@@ -54,7 +54,7 @@ class LocalNotificationManager: ObservableObject {
             content.sound = .default
             let n = 7
             let nextTrigger = Calendar.current.date(byAdding: .day, value: n, to: Date())!
-            let comps = Calendar.current.dateComponents([.year, .month, .day], from: nextTrigger)
+            let comps = Calendar.current.dateComponents([.year, .month, .day, .hour], from: nextTrigger)
             let trigger = UNCalendarNotificationTrigger(dateMatching: comps, repeats: false)
             let request = UNNotificationRequest(identifier: notification.id, content: content, trigger: trigger)
     
