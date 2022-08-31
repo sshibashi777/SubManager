@@ -22,13 +22,15 @@ struct SubscriptionEdit: View {
                             sub.renewDate = dateFormatter.string(from: date) as String
                         })
                 }
+                
                 Section(header: Text("Service name")) {
                     TextField("Enter service name here", text: $sub.serviceName)
                 }
+                
                 Section(header: Text("Amount")) {
                     TextField("Enter paying amount here", text: $sub.amount)
                         .keyboardType(.numberPad)
-                }
+                } 
             }
         }
     }
