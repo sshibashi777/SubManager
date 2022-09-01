@@ -30,7 +30,7 @@ struct ContentView: View {
                 
                 VStack {
                     SubscriptionList(subs: $subs, sub: $sub)
-                        .padding(.top, 90)
+                        .padding(.top, 120)
                 }
                 if subs.isEmpty {
                     VStack {
@@ -203,10 +203,10 @@ struct ContentView: View {
                             Text("Understood!")
                                 .bold()
                                 .foregroundColor(.white)
-                                .frame(width: 250, height: 40)
+                                .frame(width: 250, height: 50)
                         }
                         .background(.blue)
-                        .cornerRadius(25)
+                        .cornerRadius(15)
                         .padding(.bottom, 30)
                         .scaleEffect(understoodPressed ? 0.8 : 1.0)
                         .pressEvents {

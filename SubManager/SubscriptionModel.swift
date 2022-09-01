@@ -54,7 +54,7 @@ extension Subscription {
 extension Subscription {
     static let sampleData: [Subscription] =
     [
-//        Subscription(renewDate: "", serviceName: "", amount: ""),
+        Subscription(renewDate: "", serviceName: "", amount: ""),
         Subscription(renewDate: "08/20/2022", serviceName: "Netflix", amount: "980"),
         Subscription(renewDate: "08/19/2022", serviceName: "SoftBank", amount: "5000"),
         Subscription(renewDate: "09/03/2022", serviceName: "Amazon Prime", amount: "540"),
