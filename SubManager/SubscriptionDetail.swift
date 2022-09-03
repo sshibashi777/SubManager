@@ -15,6 +15,8 @@ struct SubscriptionDetail: View {
     @Binding var  newSubscriptionData: Subscription
     @State private var editIsPressed = false
     @State private var deleteIsPressed = false
+    //Will be removed in the future
+    @State private var showingPopup = false
     let saveAction: ()->Void
     
     var body: some View {
@@ -57,7 +59,10 @@ struct SubscriptionDetail: View {
                 
                 
                 Button {
-                   //Scheduled to be added soon
+                    //Scheduled to be added soon
+                    
+                    //Shows a popup saying remove function is temporarily deprecated
+                    showingPopup = true
                 } label: {
                     Text("\(Image(systemName: "trash"))Delete")
                         .font(.title2)
@@ -80,6 +85,9 @@ struct SubscriptionDetail: View {
             .cornerRadius(25)
             .shadow(color: Color("textColor").opacity(0.3), radius: 5, x: 4, y: 4)
             .shadow(color: Color("textColor").opacity(0.3), radius: 5, x: -4, y: -4)
+            .alert("The remove function has been removed temporarily for debugging. The developer is currently on the issue. Sorry for your inconvinience.", isPresented: $showingPopup) {
+                    Button("OK", role: .none) {}
+            }
         }
         .sheet(isPresented: $showingSubscriptionEdit) {
             NavigationView {
@@ -108,16 +116,17 @@ struct SubscriptionDetail: View {
             if phase == .inactive { saveAction() }
         }
     }
-    
-    struct DetailView_Previews: PreviewProvider {
-        static var previews: some View {
-            NavigationView {
-                SubscriptionDetail(sub: .constant(Subscription.sampleData[1]), subs: .constant(Subscription.sampleData),  newSubscriptionData: .constant(Subscription.sampleData[1]),  saveAction: {})
-            }
-            NavigationView {
-                SubscriptionDetail(sub: .constant(Subscription.sampleData[1]), subs: .constant(Subscription.sampleData),  newSubscriptionData: .constant(Subscription.sampleData[1]),  saveAction: {})
-                    .preferredColorScheme(.dark)
-            }
+}
+
+struct DetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            SubscriptionDetail(sub: .constant(Subscription.sampleData[1]), subs: .constant(Subscription.sampleData),  newSubscriptionData: .constant(Subscription.sampleData[1]),  saveAction: {})
+        }
+        NavigationView {
+            SubscriptionDetail(sub: .constant(Subscription.sampleData[1]), subs: .constant(Subscription.sampleData),  newSubscriptionData: .constant(Subscription.sampleData[1]),  saveAction: {})
+                .preferredColorScheme(.dark)
         }
     }
 }
+
