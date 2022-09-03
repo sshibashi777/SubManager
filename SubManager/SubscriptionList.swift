@@ -19,7 +19,7 @@ struct SubscriptionList: View {
     var body: some View {
         ScrollView(.vertical) {
             VStack {
-                ForEach(subs.indices, id: \.self) {index in
+                ForEach(subs.indices, id: \.self) { index in
                     NavigationLink(destination: SubscriptionDetail(sub: $subs[index], subs: $subs, newSubscriptionData: $subs[index], saveAction: {})
                         .toolbar {
                             ToolbarItem(placement: .confirmationAction) {
@@ -33,7 +33,7 @@ struct SubscriptionList: View {
                                     print(manager.notifications)
                                 }
                                 .alert("Notification Added", isPresented: $showingAlert) {
-                                    Button("OK", role: .cancel) {}
+                                    Button("OK", role: .none) {}
                                 }
                                 .font(.largeTitle)
                                 .scaleEffect(notifyIsPressed ? 0.8 : 1.0)

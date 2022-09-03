@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SubscriptionDetail: View {
+struct SubscriptionDetail: View {    
     @Binding var sub: Subscription
     @Binding var subs: [Subscription]
     @Environment(\.scenePhase) private var scenePhase
@@ -57,7 +57,7 @@ struct SubscriptionDetail: View {
                 
                 
                 Button {
-                    subs.remove(at: subs.count - 1)
+                   //Scheduled to be added soon
                 } label: {
                     Text("\(Image(systemName: "trash"))Delete")
                         .font(.title2)
